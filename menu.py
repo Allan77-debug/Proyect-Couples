@@ -1,7 +1,8 @@
 from tkinter import *
-
+from PIL import Image, ImageTk
+import random
+from tkinter import messagebox
 from level1 import run_memory_game  # Asegúrate de tener esta importación correcta
-
 
 def toggle_fullscreen(event=None):
     # Cambia entre pantalla completa y modo ventana
