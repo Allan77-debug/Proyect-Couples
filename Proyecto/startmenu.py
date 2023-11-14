@@ -3,6 +3,7 @@ from PIL import Image, ImageTk
 import sqlite3
 import tkinter.font as Tkfont
 import level1
+import level2
 
 win = Tk()
 win.title("JUEGO DE PAREJAS")
@@ -74,7 +75,7 @@ def play():
     if j == "1":
         level1.start(type.get()) # Para los tipos de imágenes poner en la función start un argumento, que en el archivo de lvl 1 haga que cambie la lista de las imagenes que se estan usando
     if j == "2":
-        level1.start(type.get())
+        level2.start(type.get())
     if j == "3":
         level1.start(type.get())
     
