@@ -307,7 +307,7 @@ def start(t):
                 if points == 8:
                     completed = messagebox.showinfo("FELICITACIONES", "HA GANADO EL JUEGO!\nNúmero de intentos: {}")
                     if completed == "ok":
-                        root.quit()
+                        root.destroy()
                 
             else:    
                 loses += 1
