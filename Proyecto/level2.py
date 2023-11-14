@@ -49,6 +49,18 @@ def start(t):
         img10 = ImageTk.PhotoImage(Image.open("Images/Paisaje 6.jpg").resize((250, 150)))
         img11 = ImageTk.PhotoImage(Image.open("Images/Paisaje 7.jpg").resize((250, 150)))
         img12 = ImageTk.PhotoImage(Image.open("Images/Paisaje 8.jpg").resize((250, 150)))
+        img13 = ImageTk.PhotoImage(Image.open("Images/Paisaje 6.jpg").resize((250, 150)))
+        img14 = ImageTk.PhotoImage(Image.open("Images/Paisaje 7.jpg").resize((250, 150)))
+        img15 = ImageTk.PhotoImage(Image.open("Images/Paisaje 8.jpg").resize((250, 150)))
+        img16 = ImageTk.PhotoImage(Image.open("Images/Paisaje 5.jpg").resize((250, 150)))
+        img17 = ImageTk.PhotoImage(Image.open("Images/Paisaje 6.jpg").resize((250, 150)))
+        img18 = ImageTk.PhotoImage(Image.open("Images/Paisaje 7.jpg").resize((250, 150)))
+        img19 = ImageTk.PhotoImage(Image.open("Images/Paisaje 8.jpg").resize((250, 150)))
+        img20 = ImageTk.PhotoImage(Image.open("Images/Paisaje 1.jpg").resize((250, 150)))
+        img21 = ImageTk.PhotoImage(Image.open("Images/Paisaje 2.jpg").resize((250, 150)))
+        img22 = ImageTk.PhotoImage(Image.open("Images/Paisaje 3.jpg").resize((250, 150)))
+        img23 = ImageTk.PhotoImage(Image.open("Images/Paisaje 4.jpg").resize((250, 150)))
+        img24 = ImageTk.PhotoImage(Image.open("Images/Paisaje 5.jpg").resize((250, 150)))
         qmark = ImageTk.PhotoImage(Image.open("Images/questionmark.jpg").resize((250, 150)))
     elif t == "3":
         img1 = ImageTk.PhotoImage(Image.open("Images/Paisaje 1.jpg").resize((250, 150)))
@@ -61,7 +73,7 @@ def start(t):
         img8 = ImageTk.PhotoImage(Image.open("Images/Paisaje 8.jpg").resize((250, 150)))
         qmark = ImageTk.PhotoImage(Image.open("Images/questionmark.jpg").resize((250, 150)))
 
-    all_images = [qmark, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12]
+    all_images = [qmark, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, img17, img18, img19, img20, img21, img22, img23, img24, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, img17, img18, img19, img20, img21, img22, img23, img24]
     images = [qmark]
 
     while len(images) < 25:
@@ -124,6 +136,14 @@ def start(t):
     Imgbtn14.grid(row=3, column=1)
     Imgbtn15.grid(row=3, column=2)
     Imgbtn16.grid(row=3, column=3)
+    Imgbtn17.grid(row=4, column=0)
+    Imgbtn18.grid(row=4, column=1)
+    Imgbtn19.grid(row=4, column=2)
+    Imgbtn20.grid(row=4, column=3)
+    Imgbtn21.grid(row=5, column=0)
+    Imgbtn22.grid(row=5, column=1)
+    Imgbtn23.grid(row=5, column=2)
+    Imgbtn24.grid(row=5, column=3)
 
     # Point system:
     points = 0
@@ -179,6 +199,14 @@ def start(t):
             Imgbtn14.config(command=lambda: uncover(14))
             Imgbtn15.config(command=lambda: uncover(15))
             Imgbtn16.config(command=lambda: uncover(16))
+            Imgbtn17.config(command=lambda: uncover(17))
+            Imgbtn18.config(command=lambda: uncover(18))
+            Imgbtn19.config(command=lambda: uncover(19))
+            Imgbtn20.config(command=lambda: uncover(20))
+            Imgbtn21.config(command=lambda: uncover(21))
+            Imgbtn22.config(command=lambda: uncover(22))
+            Imgbtn23.config(command=lambda: uncover(23))
+            Imgbtn24.config(command=lambda: uncover(24))
 
             k = num - 1
         else:
@@ -201,6 +229,14 @@ def start(t):
         nonlocal Imgbtn14
         nonlocal Imgbtn15
         nonlocal Imgbtn16
+        nonlocal Imgbtn17
+        nonlocal Imgbtn18
+        nonlocal Imgbtn19
+        nonlocal Imgbtn20
+        nonlocal Imgbtn21
+        nonlocal Imgbtn22
+        nonlocal Imgbtn23
+        nonlocal Imgbtn24
 
         btns[num - 1].config(image=qmark)
         btns[num - 1].image = qmark
@@ -223,6 +259,14 @@ def start(t):
         Imgbtn14.config(command=lambda: show(14))
         Imgbtn15.config(command=lambda: show(15))
         Imgbtn16.config(command=lambda: show(16))
+        Imgbtn17.config(command=lambda: show(17))
+        Imgbtn18.config(command=lambda: show(18))
+        Imgbtn19.config(command=lambda: show(19))
+        Imgbtn20.config(command=lambda: show(20))
+        Imgbtn21.config(command=lambda: show(21))
+        Imgbtn22.config(command=lambda: show(22))
+        Imgbtn23.config(command=lambda: show(23))
+        Imgbtn24.config(command=lambda: show(24))
 
     def uncover(num):
         nonlocal startime
@@ -245,6 +289,14 @@ def start(t):
         nonlocal Imgbtn14
         nonlocal Imgbtn15
         nonlocal Imgbtn16
+        nonlocal Imgbtn17
+        nonlocal Imgbtn18
+        nonlocal Imgbtn19
+        nonlocal Imgbtn20
+        nonlocal Imgbtn21
+        nonlocal Imgbtn22
+        nonlocal Imgbtn23
+        nonlocal Imgbtn24
         nonlocal k
 
         if 0 < num < 25 and num != k + 1:
@@ -272,6 +324,14 @@ def start(t):
                 Imgbtn14.config(command=lambda: show(14))
                 Imgbtn15.config(command=lambda: show(15))
                 Imgbtn16.config(command=lambda: show(16))
+                Imgbtn17.config(command=lambda: show(17))
+                Imgbtn18.config(command=lambda: show(18))
+                Imgbtn19.config(command=lambda: show(19))
+                Imgbtn20.config(command=lambda: show(20))
+                Imgbtn21.config(command=lambda: show(21))
+                Imgbtn22.config(command=lambda: show(22))
+                Imgbtn23.config(command=lambda: show(23))
+                Imgbtn24.config(command=lambda: show(24))
 
                 if points == 12:
                     totaltime = round(time.time() - startime, 2)
@@ -342,4 +402,3 @@ def start(t):
     submit.grid(row=4, column=3, columnspan=1, sticky="ew")
 
     # Finish the game:
-
