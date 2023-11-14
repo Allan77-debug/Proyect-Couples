@@ -27,53 +27,49 @@ def start(t):
 
     # Images
     if t == "1":
-        img1 = ImageTk.PhotoImage(Image.open("Images/Paisajes/Paisaje 1.jpg").resize((250, 150)))
-        img2 = ImageTk.PhotoImage(Image.open("Images/Paisajes/Paisaje 2.jpg").resize((250, 150)))
-        img3 = ImageTk.PhotoImage(Image.open("Images/Paisajes/Paisaje 3.jpg").resize((250, 150)))
-        img4 = ImageTk.PhotoImage(Image.open("Images/Paisajes/Paisaje 4.jpg").resize((250, 150)))
-        img5 = ImageTk.PhotoImage(Image.open("Images/Paisajes/Paisaje 5.jpg").resize((250, 150)))
-        img6 = ImageTk.PhotoImage(Image.open("Images/Paisajes/Paisaje 6.jpg").resize((250, 150)))
-        img7 = ImageTk.PhotoImage(Image.open("Images/Paisajes/Paisaje 7.jpg").resize((250, 150)))
-        img8 = ImageTk.PhotoImage(Image.open("Images/Paisajes/Paisaje 8.jpg").resize((250, 150)))
+        img1 = ImageTk.PhotoImage(Image.open("Images/Animales/aguila.jpg").resize((250, 150)))
+        img2 = ImageTk.PhotoImage(Image.open("Images/Animales/Capybara.jpg").resize((250, 150)))
+        img3 = ImageTk.PhotoImage(Image.open("Images/Animales/Cocodrilo.jpg").resize((250, 150)))
+        img4 = ImageTk.PhotoImage(Image.open("Images/Animales/Coyote.jpg").resize((250, 150)))
+        img5 = ImageTk.PhotoImage(Image.open("Images/Animales/elefante.jpg").resize((250, 150)))
+        img6 = ImageTk.PhotoImage(Image.open("Images/Animales/hipopotamo.jpg").resize((250, 150)))
+        img7 = ImageTk.PhotoImage(Image.open("Images/Animales/Iguana.jpg").resize((250, 150)))
+        img8 = ImageTk.PhotoImage(Image.open("Images/Animales/jirafa.jpg").resize((250, 150)))
+        img9 = ImageTk.PhotoImage(Image.open("Images/Animales/Leon.jpg").resize((250, 150)))
+        img10 = ImageTk.PhotoImage(Image.open("Images/Animales/Mono.jpg").resize((250, 150)))
+        img11 = ImageTk.PhotoImage(Image.open("Images/Animales/oso.jpg").resize((250, 150)))
+        img12 = ImageTk.PhotoImage(Image.open("Images/Animales/Pinguino.jpg").resize((250, 150)))
         qmark = ImageTk.PhotoImage(Image.open("Images/questionmark.jpg").resize((250, 150)))
     elif t == "2":
-        img1 = ImageTk.PhotoImage(Image.open("Images/Paisaje 1.jpg").resize((250, 150)))
-        img2 = ImageTk.PhotoImage(Image.open("Images/Paisaje 2.jpg").resize((250, 150)))
-        img3 = ImageTk.PhotoImage(Image.open("Images/Paisaje 3.jpg").resize((250, 150)))
-        img4 = ImageTk.PhotoImage(Image.open("Images/Paisaje 4.jpg").resize((250, 150)))
-        img5 = ImageTk.PhotoImage(Image.open("Images/Paisaje 5.jpg").resize((250, 150)))
-        img6 = ImageTk.PhotoImage(Image.open("Images/Paisaje 6.jpg").resize((250, 150)))
-        img7 = ImageTk.PhotoImage(Image.open("Images/Paisaje 7.jpg").resize((250, 150)))
-        img8 = ImageTk.PhotoImage(Image.open("Images/Paisaje 8.jpg").resize((250, 150)))
-        img9 = ImageTk.PhotoImage(Image.open("Images/Paisaje 5.jpg").resize((250, 150)))
-        img10 = ImageTk.PhotoImage(Image.open("Images/Paisaje 6.jpg").resize((250, 150)))
-        img11 = ImageTk.PhotoImage(Image.open("Images/Paisaje 7.jpg").resize((250, 150)))
-        img12 = ImageTk.PhotoImage(Image.open("Images/Paisaje 8.jpg").resize((250, 150)))
-        img13 = ImageTk.PhotoImage(Image.open("Images/Paisaje 6.jpg").resize((250, 150)))
-        img14 = ImageTk.PhotoImage(Image.open("Images/Paisaje 7.jpg").resize((250, 150)))
-        img15 = ImageTk.PhotoImage(Image.open("Images/Paisaje 8.jpg").resize((250, 150)))
-        img16 = ImageTk.PhotoImage(Image.open("Images/Paisaje 5.jpg").resize((250, 150)))
-        img17 = ImageTk.PhotoImage(Image.open("Images/Paisaje 6.jpg").resize((250, 150)))
-        img18 = ImageTk.PhotoImage(Image.open("Images/Paisaje 7.jpg").resize((250, 150)))
-        img19 = ImageTk.PhotoImage(Image.open("Images/Paisaje 8.jpg").resize((250, 150)))
-        img20 = ImageTk.PhotoImage(Image.open("Images/Paisaje 1.jpg").resize((250, 150)))
-        img21 = ImageTk.PhotoImage(Image.open("Images/Paisaje 2.jpg").resize((250, 150)))
-        img22 = ImageTk.PhotoImage(Image.open("Images/Paisaje 3.jpg").resize((250, 150)))
-        img23 = ImageTk.PhotoImage(Image.open("Images/Paisaje 4.jpg").resize((250, 150)))
-        img24 = ImageTk.PhotoImage(Image.open("Images/Paisaje 5.jpg").resize((250, 150)))
+        img1 = ImageTk.PhotoImage(Image.open("Images/Animales/aguila.jpg").resize((250, 150)))
+        img2 = ImageTk.PhotoImage(Image.open("Images/Animales/Capybara.jpg").resize((250, 150)))
+        img3 = ImageTk.PhotoImage(Image.open("Images/Animales/Cocodrilo.jpg").resize((250, 150)))
+        img4 = ImageTk.PhotoImage(Image.open("Images/Animales/Coyote.jpg").resize((250, 150)))
+        img5 = ImageTk.PhotoImage(Image.open("Images/Animales/elefante.jpg").resize((250, 150)))
+        img6 = ImageTk.PhotoImage(Image.open("Images/Animales/hipopotamo.jpg").resize((250, 150)))
+        img7 = ImageTk.PhotoImage(Image.open("Images/Animales/Iguana.jpg").resize((250, 150)))
+        img8 = ImageTk.PhotoImage(Image.open("Images/Animales/jirafa.jpg").resize((250, 150)))
+        img9 = ImageTk.PhotoImage(Image.open("Images/Animales/Leon.jpg").resize((250, 150)))
+        img10 = ImageTk.PhotoImage(Image.open("Images/Animales/Mono.jpg").resize((250, 150)))
+        img11 = ImageTk.PhotoImage(Image.open("Images/Animales/oso.jpg").resize((250, 150)))
+        img12 = ImageTk.PhotoImage(Image.open("Images/Animales/Pinguino.jpg").resize((250, 150)))
         qmark = ImageTk.PhotoImage(Image.open("Images/questionmark.jpg").resize((250, 150)))
     elif t == "3":
-        img1 = ImageTk.PhotoImage(Image.open("Images/Paisaje 1.jpg").resize((250, 150)))
-        img2 = ImageTk.PhotoImage(Image.open("Images/Paisaje 2.jpg").resize((250, 150)))
-        img3 = ImageTk.PhotoImage(Image.open("Images/Paisaje 3.jpg").resize((250, 150)))
-        img4 = ImageTk.PhotoImage(Image.open("Images/Paisaje 4.jpg").resize((250, 150)))
-        img5 = ImageTk.PhotoImage(Image.open("Images/Paisaje 5.jpg").resize((250, 150)))
-        img6 = ImageTk.PhotoImage(Image.open("Images/Paisaje 6.jpg").resize((250, 150)))
-        img7 = ImageTk.PhotoImage(Image.open("Images/Paisaje 7.jpg").resize((250, 150)))
-        img8 = ImageTk.PhotoImage(Image.open("Images/Paisaje 8.jpg").resize((250, 150)))
+        img1 = ImageTk.PhotoImage(Image.open("Images/Animales/aguila.jpg").resize((250, 150)))
+        img2 = ImageTk.PhotoImage(Image.open("Images/Animales/Capybara.jpg").resize((250, 150)))
+        img3 = ImageTk.PhotoImage(Image.open("Images/Animales/Cocodrilo.jpg").resize((250, 150)))
+        img4 = ImageTk.PhotoImage(Image.open("Images/Animales/Coyote.jpg").resize((250, 150)))
+        img5 = ImageTk.PhotoImage(Image.open("Images/Animales/elefante.jpg").resize((250, 150)))
+        img6 = ImageTk.PhotoImage(Image.open("Images/Animales/hipopotamo.jpg").resize((250, 150)))
+        img7 = ImageTk.PhotoImage(Image.open("Images/Animales/Iguana.jpg").resize((250, 150)))
+        img8 = ImageTk.PhotoImage(Image.open("Images/Animales/jirafa.jpg").resize((250, 150)))
+        img9 = ImageTk.PhotoImage(Image.open("Images/Animales/Leon.jpg").resize((250, 150)))
+        img10 = ImageTk.PhotoImage(Image.open("Images/Animales/Mono.jpg").resize((250, 150)))
+        img11 = ImageTk.PhotoImage(Image.open("Images/Animales/oso.jpg").resize((250, 150)))
+        img12 = ImageTk.PhotoImage(Image.open("Images/Animales/Pinguino.jpg").resize((250, 150)))
         qmark = ImageTk.PhotoImage(Image.open("Images/questionmark.jpg").resize((250, 150)))
 
-    all_images = [qmark, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, img17, img18, img19, img20, img21, img22, img23, img24, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, img17, img18, img19, img20, img21, img22, img23, img24]
+    all_images = [qmark, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12]
     images = [qmark]
 
     while len(images) < 25:
@@ -390,7 +386,7 @@ def start(t):
                 if points == 12:
                     completed = messagebox.showinfo("FELICITACIONES", "HA GANADO EL JUEGO!\nNúmero de intentos: {}")
                     if completed == "ok":
-                        root.quit()
+                        root.destroy()
 
             else:
                 loses += 1
@@ -400,5 +396,3 @@ def start(t):
 
     submit = Button(img_frame, width=5, text="Show Image", command=get_uncover)
     submit.grid(row=4, column=3, columnspan=1, sticky="ew")
-
-    # Finish the game:
