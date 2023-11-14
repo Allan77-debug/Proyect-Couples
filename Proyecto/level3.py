@@ -77,7 +77,7 @@ def start(t):
         img15 = ImageTk.PhotoImage(Image.open("Images/Animales/jirafa.jpg").resize((175, 125)))
         qmark = ImageTk.PhotoImage(Image.open("Images/questionmark.jpg").resize((175, 125)))
 
-    all_images = [qmark, img1, img2, img3, img4, img5, img6, img7, img8, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img1, img2, img3, img4, img5, img6, img7, img8, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15]
+    all_images = [qmark, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15]
     images = [qmark]
 
     while len(images) < 31:
