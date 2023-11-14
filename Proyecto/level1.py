@@ -35,17 +35,17 @@ def start(t):
         img7 = ImageTk.PhotoImage(Image.open("Images/Paisajes/Paisaje 7.jpg").resize((250, 150)))
         img8 = ImageTk.PhotoImage(Image.open("Images/Paisajes/Paisaje 8.jpg").resize((250, 150)))
         qmark = ImageTk.PhotoImage(Image.open("Images/questionmark.jpg").resize((250,150)))
-    elif t == "2":  
-        img1 = ImageTk.PhotoImage(Image.open("Images/Paisaje 1.jpg").resize((250, 150)))
-        img2 = ImageTk.PhotoImage(Image.open("Images/Paisaje 2.jpg").resize((250, 150)))
-        img3 = ImageTk.PhotoImage(Image.open("Images/Paisaje 3.jpg").resize((250, 150)))
-        img4 = ImageTk.PhotoImage(Image.open("Images/Paisaje 4.jpg").resize((250, 150)))
-        img5 = ImageTk.PhotoImage(Image.open("Images/Paisaje 5.jpg").resize((250, 150)))
-        img6 = ImageTk.PhotoImage(Image.open("Images/Paisaje 6.jpg").resize((250, 150)))
-        img7 = ImageTk.PhotoImage(Image.open("Images/Paisaje 7.jpg").resize((250, 150)))
-        img8 = ImageTk.PhotoImage(Image.open("Images/Paisaje 8.jpg").resize((250, 150)))
+    elif t == "2":
+        img1 = ImageTk.PhotoImage(Image.open("Images/superheroes/Ant-man.jpg").resize((250, 150)))
+        img2 = ImageTk.PhotoImage(Image.open("Images/superheroes/Black-widow.jpg").resize((250, 150)))
+        img3 = ImageTk.PhotoImage(Image.open("Images/superheroes/Capitan-America.jpg").resize((250, 150)))
+        img4 = ImageTk.PhotoImage(Image.open("Images/superheroes/Capitana-Marvel.jpg").resize((250, 150)))
+        img5 = ImageTk.PhotoImage(Image.open("Images/superheroes/Doctor-Strange.jpg").resize((250, 150)))
+        img6 = ImageTk.PhotoImage(Image.open("Images/superheroes/Gamora.jpg").resize((250, 150)))
+        img7 = ImageTk.PhotoImage(Image.open("Images/superheroes/Hulk.jpg").resize((250, 150)))
+        img8 = ImageTk.PhotoImage(Image.open("Images/superheroes/Iron-Man.jpg").resize((250, 150)))
         qmark = ImageTk.PhotoImage(Image.open("Images/questionmark.jpg").resize((250,150)))
-    elif t == "3":
+    elif t == "3":  
         img1 = ImageTk.PhotoImage(Image.open("Images/Animales/Tigre.jpg").resize((250, 150)))
         img2 = ImageTk.PhotoImage(Image.open("Images/Animales/Capybara.jpg").resize((250, 150)))
         img3 = ImageTk.PhotoImage(Image.open("Images/Animales/Cocodrilo.jpg").resize((250, 150)))
@@ -55,7 +55,7 @@ def start(t):
         img7 = ImageTk.PhotoImage(Image.open("Images/Animales/Mono.jpg").resize((250, 150)))
         img8 = ImageTk.PhotoImage(Image.open("Images/Animales/Pinguino.jpg").resize((250, 150)))
         qmark = ImageTk.PhotoImage(Image.open("Images/questionmark.jpg").resize((250,150)))
-    
+
     all_images = [qmark, img1, img2, img3, img4, img5, img6, img7, img8, img1, img2, img3, img4, img5, img6, img7, img8]
     images = [qmark]
 
