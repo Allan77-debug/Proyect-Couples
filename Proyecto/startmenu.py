@@ -4,6 +4,7 @@ import sqlite3
 import tkinter.font as Tkfont
 import level1
 import level2
+import level3
 
 win = Tk()
 win.title("JUEGO DE PAREJAS")
@@ -77,7 +78,7 @@ def play():
     if j == "2":
         level2.start(type.get())
     if j == "3":
-        level1.start(type.get())
+        level3.start(type.get())
     
 fame_btn = Button(win, text="Jugar", width=15, height=4, command=play)
 fame_btn.grid(row=3, column=0, columnspan=2, padx=15)
