@@ -46,14 +46,14 @@ def start(t):
         img8 = ImageTk.PhotoImage(Image.open("Images/Paisaje 8.jpg").resize((250, 150)))
         qmark = ImageTk.PhotoImage(Image.open("Images/questionmark.jpg").resize((250,150)))
     elif t == "3":
-        img1 = ImageTk.PhotoImage(Image.open("Images/Paisaje 1.jpg").resize((250, 150)))
-        img2 = ImageTk.PhotoImage(Image.open("Images/Paisaje 2.jpg").resize((250, 150)))
-        img3 = ImageTk.PhotoImage(Image.open("Images/Paisaje 3.jpg").resize((250, 150)))
-        img4 = ImageTk.PhotoImage(Image.open("Images/Paisaje 4.jpg").resize((250, 150)))
-        img5 = ImageTk.PhotoImage(Image.open("Images/Paisaje 5.jpg").resize((250, 150)))
-        img6 = ImageTk.PhotoImage(Image.open("Images/Paisaje 6.jpg").resize((250, 150)))
-        img7 = ImageTk.PhotoImage(Image.open("Images/Paisaje 7.jpg").resize((250, 150)))
-        img8 = ImageTk.PhotoImage(Image.open("Images/Paisaje 8.jpg").resize((250, 150)))
+        img1 = ImageTk.PhotoImage(Image.open("Images/Animales/Tigre.jpg").resize((250, 150)))
+        img2 = ImageTk.PhotoImage(Image.open("Images/Animales/Capybara.jpg").resize((250, 150)))
+        img3 = ImageTk.PhotoImage(Image.open("Images/Animales/Cocodrilo.jpg").resize((250, 150)))
+        img4 = ImageTk.PhotoImage(Image.open("Images/Animales/Coyote.jpg").resize((250, 150)))
+        img5 = ImageTk.PhotoImage(Image.open("Images/Animales/Iguana.jpg").resize((250, 150)))
+        img6 = ImageTk.PhotoImage(Image.open("Images/Animales/Leon.jpg").resize((250, 150)))
+        img7 = ImageTk.PhotoImage(Image.open("Images/Animales/Mono.jpg").resize((250, 150)))
+        img8 = ImageTk.PhotoImage(Image.open("Images/Animales/Pinguino.jpg").resize((250, 150)))
         qmark = ImageTk.PhotoImage(Image.open("Images/questionmark.jpg").resize((250,150)))
     
     all_images = [qmark, img1, img2, img3, img4, img5, img6, img7, img8, img1, img2, img3, img4, img5, img6, img7, img8]
