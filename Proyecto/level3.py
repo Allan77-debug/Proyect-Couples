@@ -435,7 +435,7 @@ def start(t):
                 btns[k].config(state=DISABLED)
                 submit.config(command=get_show)
 
-                if points == 8:
+                if points == 15:
                     completed = messagebox.showinfo("FELICITACIONES", "HA GANADO EL JUEGO!\nNúmero de intentos: {}")
                     if completed == "ok":
                         root.quit()
