@@ -22,7 +22,19 @@ def start(t):
             tries REAL)""")
 
     # Timer
-    startime = time.time()
+    start_time = time.time()
+
+    start_time = time.time()
+
+    def update_timer():
+        nonlocal start_time
+        elapsed_time = time.time() - start_time
+        timer_label.config(text=f"Tiempo: {int(elapsed_time)} segundos")
+        root.after(1000, update_timer)
+
+    timer_label = Label(root, text="Tiempo: 0 segundos", font=("Helvetica", 16))
+    timer_label.grid(row=1, column=0, columnspan=6)
+    update_timer()
 
     # Images
     if t == "1":
@@ -340,6 +352,7 @@ def start(t):
         nonlocal Imgbtn28
         nonlocal Imgbtn29
         nonlocal Imgbtn30
+        nonlocal start_time
 
         if 0 < num < 31 and num != k + 1:
             btns[num - 1].config(image=images[num]) 
@@ -382,7 +395,7 @@ def start(t):
                 Imgbtn30.config(command=lambda: show(30))
 
                 if points == 15:
-                    totaltime = round(time.time() - startime, 2)
+                    totaltime = round(time.time() - start_time, 2)
                     completed = messagebox.showinfo("FELICITACIONES", f"HA GANADO EL JUEGO!\nNúmero de intentos: {points + loses}\nTiempo empleado: {totaltime} segundos")
                     if completed == "ok":
                         root.destroy()
@@ -435,7 +448,7 @@ def start(t):
                 btns[k].config(state=DISABLED)
                 submit.config(command=get_show)
 
-                if points == 15:
+                if points == 8:
                     completed = messagebox.showinfo("FELICITACIONES", "HA GANADO EL JUEGO!\nNúmero de intentos: {}")
                     if completed == "ok":
                         root.quit()
