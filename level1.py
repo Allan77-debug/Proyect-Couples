@@ -14,7 +14,7 @@ def run_memory_game():
     game_window.bind("<Escape>", lambda e: game_window.attributes("-fullscreen", False))
 
 
-    #Imágenes
+    #Imágenes xd
 
     img1 = ImageTk.PhotoImage(Image.open(r"E:\UNI\Proyecto\Images\Paisaje 1.jpg").resize((250, 150)))
     img2 = ImageTk.PhotoImage(Image.open(r"E:\UNI\Proyecto\Images\images\Paisaje 2.jpg").resize((250, 150)))
