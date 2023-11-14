@@ -35,7 +35,7 @@ def start(t):
         img7 = ImageTk.PhotoImage(Image.open("Images/Paisajes/Paisaje 7.jpg").resize((250, 150)))
         img8 = ImageTk.PhotoImage(Image.open("Images/Paisajes/Paisaje 8.jpg").resize((250, 150)))
         qmark = ImageTk.PhotoImage(Image.open("Images/questionmark.jpg").resize((250,150)))
-    elif t == "2":
+    elif t == "2":  
         img1 = ImageTk.PhotoImage(Image.open("Images/Paisaje 1.jpg").resize((250, 150)))
         img2 = ImageTk.PhotoImage(Image.open("Images/Paisaje 2.jpg").resize((250, 150)))
         img3 = ImageTk.PhotoImage(Image.open("Images/Paisaje 3.jpg").resize((250, 150)))
@@ -317,5 +317,3 @@ def start(t):
 
     submit = Button(img_frame, width=5, text="Show Image", command=get_uncover)
     submit.grid(row=4, column=3, columnspan=1, sticky="ew")
-
-    # Finish the game:
