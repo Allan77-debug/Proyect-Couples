@@ -22,7 +22,18 @@ def start(t):
             tries REAL)""")
 
     # Timer
-    startime = time.time()
+    start_time = time.time()
+
+    def update_timer():
+        nonlocal start_time
+        elapsed_time = time.time() - start_time
+        timer_label.config(text=f"Tiempo: {int(elapsed_time)} segundos")
+        root.after(1000, update_timer)
+
+    timer_label = Label(root, text="Tiempo: 0 segundos", font=("Helvetica", 16))
+    timer_label.grid(row=1, column=0, columnspan=6)
+    update_timer()
+
 
     # Images
     if t == "1":
@@ -202,7 +213,7 @@ def start(t):
         Imgbtn16.config(command=lambda: show(16))
 
     def uncover(num):
-        nonlocal startime
+        nonlocal start_time
         nonlocal btns
         nonlocal points
         nonlocal loses
@@ -251,7 +262,7 @@ def start(t):
                 Imgbtn16.config(command=lambda: show(16))
 
                 if points == 8:
-                    totaltime = round(time.time() - startime, 2)
+                    totaltime = round(time.time() - start_time, 2)
                     completed = messagebox.showinfo("FELICITACIONES", f"HA GANADO EL JUEGO!\nNúmero de intentos: {points + loses}\nTiempo empleado: {totaltime} segundos")
                     if completed == "ok":
                         root.destroy()
