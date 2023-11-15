@@ -23,11 +23,13 @@ Label(win, text="JUEGO DE PAREJAS", padx=0, pady=30, font=fontTitle).grid(row=0,
 def get_name():
     global name
     name = name_entry.get()
+    name_entry.delete(0, END)
 
 fontName = Tkfont.Font(size=10)
 lbl_name = Label(win, text="Nombre:", font=fontName)
 lbl_name.grid(row=1, column=0, padx=15, pady=10)   
 
+name = ""
 name_entry = Entry(win, width=50)
 name_entry.grid(row=1, column=1, columnspan=2, sticky="ew", padx=25, pady=1)
 
@@ -71,14 +73,15 @@ fame_btn.grid(row=3, column=2, columnspan=2, padx=15)
 
 #Play Button
 def play():
+    global name
     global lvl
     j = lvl.get() 
     if j == "1":
-        level1.start(type.get()) # Para los tipos de imágenes poner en la función start un argumento, que en el archivo de lvl 1 haga que cambie la lista de las imagenes que se estan usando
+        level1.start(type.get(), name) # Para los tipos de imágenes poner en la función start un argumento, que en el archivo de lvl 1 haga que cambie la lista de las imagenes que se estan usando
     if j == "2":
-        level2.start(type.get())
+        level2.start(type.get(), name)
     if j == "3":
-        level3.start(type.get())
+        level3.start(type.get(), name)
     
 fame_btn = Button(win, text="Jugar", width=15, height=4, command=play)
 fame_btn.grid(row=3, column=0, columnspan=2, padx=15)
