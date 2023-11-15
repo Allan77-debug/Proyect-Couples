@@ -6,7 +6,7 @@ import time
 import sqlite3
 
 
-def start(t):
+def start(t, name):
     root = Toplevel()
     root.title("NIVEL 2")
     root.geometry("1550x700")
@@ -20,7 +20,8 @@ def start(t):
     c.execute("""CREATE TABLE IF NOT EXISTS PlayerData (
             name TEXT,
             time REAL, 
-            tries REAL)""")
+            tries REAL
+            level TEXT)""")
 
     # Timer
     start_time = time.time()
@@ -217,8 +218,6 @@ def start(t):
             Imgbtn24.config(command=lambda: uncover(24))
 
             k = num - 1
-        else:
-            pass
 
     def cover(k, num):
         nonlocal Imgbtn1
@@ -343,8 +342,21 @@ def start(t):
 
                 if points == 12:
                     totaltime = round(time.time() - start_time, 2)
+                    conn = sqlite3.connect("database.db")
+                    c = conn.cursor()
+                    c.execute("INSERT INTO PlayerData VALUES (:name, :time, :tries, :level)",
+                              {
+                                  "name": name,
+                                  "time": totaltime,
+                                  "tries": points + loses,
+                                  "level": "Nivel 2"
+                              }
+                              )
+                    conn.commit()
+                    conn.close()
                     completed = messagebox.showinfo("FELICITACIONES",
                                                     f"HA GANADO EL JUEGO!\nNúmero de intentos: {points + loses}\nTiempo empleado: {totaltime} segundos")
+                    
                     if completed == "ok":
                         root.destroy()
             else:
@@ -396,7 +408,21 @@ def start(t):
                 submit.config(command=get_show)
 
                 if points == 12:
-                    completed = messagebox.showinfo("FELICITACIONES", "HA GANADO EL JUEGO!\nNúmero de intentos: {}")
+                    totaltime = round(time.time() - start_time, 2)
+                    conn = sqlite3.connect("database.db")
+                    c = conn.cursor()
+                    c.execute("INSERT INTO PlayerData VALUES (:name, :time, :tries, :level)",
+                              {
+                                  "name": name,
+                                  "time": totaltime,
+                                  "tries": points + loses,
+                                  "level": "Nivel 2"
+                              }
+                              )
+                    conn.commit()
+                    conn.close()
+                    completed = messagebox.showinfo("FELICITACIONES",
+                                                    f"HA GANADO EL JUEGO!\nNúmero de intentos: {points + loses}\nTiempo empleado: {totaltime} segundos")
                     if completed == "ok":
                         root.destroy()
 
@@ -408,3 +434,5 @@ def start(t):
 
     submit = Button(img_frame, width=5, text="Show Image", command=get_uncover)
     submit.grid(row=4, column=3, columnspan=1, sticky="ew")
+    conn.commit()
+    conn.close()
