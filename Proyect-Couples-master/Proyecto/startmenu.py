@@ -1,11 +1,15 @@
 from tkinter import *
 import sqlite3
-import tkinter.font as tkFont
+from tkinter import messagebox
+
 from PIL import Image, ImageTk
 
+import tkinter.font as tkFont
 import level1
 import level2
 import level3
+
+fullscreen = False
 
 def on_resize(event):
     win.geometry(f"{event.width}x{event.height}")
@@ -49,6 +53,12 @@ def on_enter(event):
 def on_leave(event):
     event.widget.config(bg="#FFFFFF")  # Cambiar el color de fondo al salir
 
+def salir():
+    # Función para salir con confirmación
+    respuesta = messagebox.askquestion("Salir", "¿Estás seguro de que quieres salir?")
+    if respuesta == "yes":
+        win.destroy()
+
 win = Tk()
 win.title("JUEGO DE PAREJAS")
 win.geometry("900x525")
@@ -75,6 +85,12 @@ win.bind("<Configure>", on_resize)
 
 # Vincular el evento de teclado Ctrl+f para alternar pantalla completa
 win.bind("<Control-f>", toggle_fullscreen)
+
+# Texto informativo sobre el atajo de teclado
+font_info = tkFont.Font(size=12, family="Rockwell")
+info_text = "Ctrl + F para alternar entre pantalla completa y ventana"
+info_label = Label(win, text=info_text, font=font_info, bg="#f0ebdf", bd=0, highlightthickness=0)
+info_label.place(relx=0.5, rely=0.26, anchor="center")
 
 # Inicializar la variable que indica si está en pantalla completa o no
 fullscreen = False
@@ -128,5 +144,11 @@ btn_jugar = Button(win, text="Jugar", font=fontName, width=25, height=3, command
 btn_jugar.grid(row=6, column=0, columnspan=2, padx=15)
 btn_jugar.bind("<Enter>", on_enter)
 btn_jugar.bind("<Leave>", on_leave)
+
+# Botón para salir
+btn_salir = Button(win, text="Salir", font=fontName, width=7, height=2, command=salir, bg="#FFFFFF", bd=0, highlightthickness=0)
+btn_salir.grid(row=6, column=0, columnspan=4, padx=15)
+btn_salir.bind("<Enter>", on_enter)
+btn_salir.bind("<Leave>", on_leave)
 
 win.mainloop()

@@ -1,9 +1,12 @@
 from tkinter import *
 from tkinter import messagebox
 from PIL import Image, ImageTk
-import random 
+import random
 import time
 import sqlite3
+import keyboard
+
+fullscreen = False
 
 def start(t, name):
     root = Toplevel()
@@ -11,7 +14,16 @@ def start(t, name):
     root.geometry("1250x720")
     root.attributes("-fullscreen", False)
     root.iconbitmap("Images/Logo.ico")
-    root.resizable(width=False, height=False)
+    root.resizable(width=True, height=True)
+
+    fullscreen = False  # Variable global para rastrear el estado de la pantalla completa
+
+    def toggle_fullscreen():
+        global fullscreen
+        fullscreen = not fullscreen
+        root.attributes("-fullscreen", fullscreen)
+
+    toggle_fullscreen()
 
     # Database
     conn = sqlite3.connect("database.db")
@@ -32,44 +44,44 @@ def start(t, name):
         root.after(1000, update_timer)
 
     timer_label = Label(root, text="Tiempo: 0 segundos", font=("Helvetica", 16))
-    timer_label.grid(row=1, column=0, columnspan=6)
+    timer_label.grid(row=0, column=0, columnspan=6, sticky="ew")
     update_timer()
-
 
     # Images
     if t == "1":
-        img1 = ImageTk.PhotoImage(Image.open("Images/Paisajes/Paisaje 1.jpg").resize((250, 150)))
-        img2 = ImageTk.PhotoImage(Image.open("Images/Paisajes/Paisaje 2.jpg").resize((250, 150)))
-        img3 = ImageTk.PhotoImage(Image.open("Images/Paisajes/Paisaje 3.jpg").resize((250, 150)))
-        img4 = ImageTk.PhotoImage(Image.open("Images/Paisajes/Paisaje 4.jpg").resize((250, 150)))
-        img5 = ImageTk.PhotoImage(Image.open("Images/Paisajes/Paisaje 5.jpg").resize((250, 150)))
-        img6 = ImageTk.PhotoImage(Image.open("Images/Paisajes/Paisaje 6.jpg").resize((250, 150)))
-        img7 = ImageTk.PhotoImage(Image.open("Images/Paisajes/Paisaje 7.jpg").resize((250, 150)))
-        img8 = ImageTk.PhotoImage(Image.open("Images/Paisajes/Paisaje 8.jpg").resize((250, 150)))
-        qmark = ImageTk.PhotoImage(Image.open("Images/questionmark.jpg").resize((250,150)))
+        img1 = ImageTk.PhotoImage(Image.open("Images/Paisajes/Paisaje 1.jpg").resize((325, 185)))
+        img2 = ImageTk.PhotoImage(Image.open("Images/Paisajes/Paisaje 2.jpg").resize((325, 185)))
+        img3 = ImageTk.PhotoImage(Image.open("Images/Paisajes/Paisaje 3.jpg").resize((325, 185)))
+        img4 = ImageTk.PhotoImage(Image.open("Images/Paisajes/Paisaje 4.jpg").resize((325, 185)))
+        img5 = ImageTk.PhotoImage(Image.open("Images/Paisajes/Paisaje 5.jpg").resize((325, 185)))
+        img6 = ImageTk.PhotoImage(Image.open("Images/Paisajes/Paisaje 6.jpg").resize((325, 185)))
+        img7 = ImageTk.PhotoImage(Image.open("Images/Paisajes/Paisaje 7.jpg").resize((325, 185)))
+        img8 = ImageTk.PhotoImage(Image.open("Images/Paisajes/Paisaje 8.jpg").resize((325, 185)))
+        qmark = ImageTk.PhotoImage(Image.open("Images/questionmark.jpg").resize((325, 185)))
     elif t == "2":
-        img1 = ImageTk.PhotoImage(Image.open("Images/superheroes/Ant-man.jpg").resize((250, 150)))
-        img2 = ImageTk.PhotoImage(Image.open("Images/superheroes/Black-widow.jpg").resize((250, 150)))
-        img3 = ImageTk.PhotoImage(Image.open("Images/superheroes/Capitan-America.jpg").resize((250, 150)))
-        img4 = ImageTk.PhotoImage(Image.open("Images/superheroes/Capitana-Marvel.jpg").resize((250, 150)))
-        img5 = ImageTk.PhotoImage(Image.open("Images/superheroes/Doctor-Strange.jpg").resize((250, 150)))
-        img6 = ImageTk.PhotoImage(Image.open("Images/superheroes/Gamora.jpg").resize((250, 150)))
-        img7 = ImageTk.PhotoImage(Image.open("Images/superheroes/Hulk.jpg").resize((250, 150)))
-        img8 = ImageTk.PhotoImage(Image.open("Images/superheroes/Iron-Man.jpg").resize((250, 150)))
-        qmark = ImageTk.PhotoImage(Image.open("Images/questionmark.jpg").resize((250,150)))
-    elif t == "3":  
-        img1 = ImageTk.PhotoImage(Image.open("Images/Animales/Tigre.jpg").resize((250, 150)))
-        img2 = ImageTk.PhotoImage(Image.open("Images/Animales/Capybara.jpg").resize((250, 150)))
-        img3 = ImageTk.PhotoImage(Image.open("Images/Animales/Cocodrilo.jpg").resize((250, 150)))
-        img4 = ImageTk.PhotoImage(Image.open("Images/Animales/Coyote.jpg").resize((250, 150)))
-        img5 = ImageTk.PhotoImage(Image.open("Images/Animales/Iguana.jpg").resize((250, 150)))
-        img6 = ImageTk.PhotoImage(Image.open("Images/Animales/Leon.jpg").resize((250, 150)))
-        img7 = ImageTk.PhotoImage(Image.open("Images/Animales/Mono.jpg").resize((250, 150)))
-        img8 = ImageTk.PhotoImage(Image.open("Images/Animales/Pinguino.jpg").resize((250, 150)))
-        qmark = ImageTk.PhotoImage(Image.open("Images/questionmark.jpg").resize((250,150)))
+        img1 = ImageTk.PhotoImage(Image.open("Images/superheroes/Ant-man.jpg").resize((325, 185)))
+        img2 = ImageTk.PhotoImage(Image.open("Images/superheroes/Black-widow.jpg").resize((325, 185)))
+        img3 = ImageTk.PhotoImage(Image.open("Images/superheroes/Capitan-America.jpg").resize((325, 185)))
+        img4 = ImageTk.PhotoImage(Image.open("Images/superheroes/Capitana-Marvel.jpg").resize((325, 185)))
+        img5 = ImageTk.PhotoImage(Image.open("Images/superheroes/Doctor-Strange.jpg").resize((325, 185)))
+        img6 = ImageTk.PhotoImage(Image.open("Images/superheroes/Gamora.jpg").resize((325, 185)))
+        img7 = ImageTk.PhotoImage(Image.open("Images/superheroes/Hulk.jpg").resize((325, 185)))
+        img8 = ImageTk.PhotoImage(Image.open("Images/superheroes/Iron-Man.jpg").resize((325, 185)))
+        qmark = ImageTk.PhotoImage(Image.open("Images/questionmark.jpg").resize((325, 185)))
+    elif t == "3":
+        img1 = ImageTk.PhotoImage(Image.open("Images/Animales/Tigre.jpg").resize((325, 185)))
+        img2 = ImageTk.PhotoImage(Image.open("Images/Animales/Capybara.jpg").resize((325, 185)))
+        img3 = ImageTk.PhotoImage(Image.open("Images/Animales/Cocodrilo.jpg").resize((325, 185)))
+        img4 = ImageTk.PhotoImage(Image.open("Images/Animales/Coyote.jpg").resize((325, 185)))
+        img5 = ImageTk.PhotoImage(Image.open("Images/Animales/Iguana.jpg").resize((325, 185)))
+        img6 = ImageTk.PhotoImage(Image.open("Images/Animales/Leon.jpg").resize((325, 185)))
+        img7 = ImageTk.PhotoImage(Image.open("Images/Animales/Mono.jpg").resize((325, 185)))
+        img8 = ImageTk.PhotoImage(Image.open("Images/Animales/Pinguino.jpg").resize((325, 185)))
+        qmark = ImageTk.PhotoImage(Image.open("Images/questionmark.jpg").resize((325, 185)))
 
     all_images = [qmark, img1, img2, img3, img4, img5, img6, img7, img8, img1, img2, img3, img4, img5, img6, img7, img8]
     images = [qmark]
+
 
     while len(images) < 17:
         j = random.randint(1, 16)
@@ -78,33 +90,45 @@ def start(t, name):
 
     # Images Frame and Buttons
 
-    img_frame = Frame(root, width=100, height=100, relief=SUNKEN)
-    img_frame.grid(row=0, column=0)
+    img_frame = Frame(root, relief=SUNKEN,bg="#A598EB")  # Elimina las dimensiones iniciales
+    img_frame.grid(row=1, column=1, rowspan=4, sticky="nsew")
+    root.grid_rowconfigure(1, weight=1)
+    root.grid_columnconfigure(1, weight=1)
 
-    Imgbtn1 = Button(img_frame, image=qmark, command=lambda:uncover(1))
-    Imgbtn2 = Button(img_frame, image=qmark, command=lambda: uncover(2))
-    Imgbtn3 = Button(img_frame, image=qmark, command=lambda: uncover(3))
-    Imgbtn4 = Button(img_frame, image=qmark, command=lambda: uncover(4))
-    Imgbtn5 = Button(img_frame, image=qmark, command=lambda: uncover(5))
-    Imgbtn6 = Button(img_frame, image=qmark, command=lambda: uncover(6))
-    Imgbtn7 = Button(img_frame, image=qmark, command=lambda: uncover(7))
-    Imgbtn8 = Button(img_frame, image=qmark, command=lambda: uncover(8))
-    Imgbtn9 = Button(img_frame, image=qmark, command=lambda: uncover(9))
-    Imgbtn10 = Button(img_frame, image=qmark, command=lambda: uncover(10))
-    Imgbtn11 = Button(img_frame, image=qmark, command=lambda: uncover(11))
-    Imgbtn12 = Button(img_frame, image=qmark, command=lambda: uncover(12))
-    Imgbtn13 = Button(img_frame, image=qmark, command=lambda: uncover(13))
-    Imgbtn14 = Button(img_frame, image=qmark, command=lambda: uncover(14))
-    Imgbtn15 = Button(img_frame, image=qmark, command=lambda: uncover(15))
-    Imgbtn16 = Button(img_frame, image=qmark, command=lambda: uncover(16))
+    # Configuración de gestión de geometría para el frame de imágenes
+    for i in range(4):
+        img_frame.grid_rowconfigure(i, weight=1)
+        img_frame.grid_columnconfigure(i, weight=1)
 
-    btns = [Imgbtn1, Imgbtn2, Imgbtn3, Imgbtn4, Imgbtn5, Imgbtn6, Imgbtn7, Imgbtn8, Imgbtn9, Imgbtn10, Imgbtn11, Imgbtn12, Imgbtn13, Imgbtn14, Imgbtn15, Imgbtn16, ]
+    Imgbtn1 = Button(img_frame, image=qmark, command=lambda: uncover(1),bg="#A598EB")
+    Imgbtn2 = Button(img_frame, image=qmark, command=lambda: uncover(2),bg="#A598EB")
+    Imgbtn3 = Button(img_frame, image=qmark, command=lambda: uncover(3),bg="#A598EB")
+    Imgbtn4 = Button(img_frame, image=qmark, command=lambda: uncover(4),bg="#A598EB")
+    Imgbtn5 = Button(img_frame, image=qmark, command=lambda: uncover(5),bg="#A598EB")
+    Imgbtn6 = Button(img_frame, image=qmark, command=lambda: uncover(6),bg="#A598EB")
+    Imgbtn7 = Button(img_frame, image=qmark, command=lambda: uncover(7),bg="#A598EB")
+    Imgbtn8 = Button(img_frame, image=qmark, command=lambda: uncover(8),bg="#A598EB")
+    Imgbtn9 = Button(img_frame, image=qmark, command=lambda: uncover(9),bg="#A598EB")
+    Imgbtn10 = Button(img_frame, image=qmark, command=lambda: uncover(10),bg="#A598EB")
+    Imgbtn11 = Button(img_frame, image=qmark, command=lambda: uncover(11),bg="#A598EB")
+    Imgbtn12 = Button(img_frame, image=qmark, command=lambda: uncover(12),bg="#A598EB")
+    Imgbtn13 = Button(img_frame, image=qmark, command=lambda: uncover(13),bg="#A598EB")
+    Imgbtn14 = Button(img_frame, image=qmark, command=lambda: uncover(14),bg="#A598EB")
+    Imgbtn15 = Button(img_frame, image=qmark, command=lambda: uncover(15),bg="#A598EB")
+    Imgbtn16 = Button(img_frame, image=qmark, command=lambda: uncover(16),bg="#A598EB")
+
+    btns = [Imgbtn1, Imgbtn2, Imgbtn3, Imgbtn4, Imgbtn5, Imgbtn6, Imgbtn7, Imgbtn8, Imgbtn9, Imgbtn10, Imgbtn11,
+            Imgbtn12, Imgbtn13, Imgbtn14, Imgbtn15, Imgbtn16, ]
 
     # Set Random Uncovered Button
     k = random.randint(0, 15)
     btns[k].config(image=images[k + 1])
 
     # Grid system for Buttons
+    for i in range(4):
+        for j in range(4):
+            index = i * 4 + j
+            btns[index].grid(row=i, column=j, sticky="nsew")
     Imgbtn1.grid(row=0, column=0)
     Imgbtn2.grid(row=0, column=1)
     Imgbtn3.grid(row=0, column=2)
@@ -128,6 +152,7 @@ def start(t, name):
     n = 1
 
     # Function cover and discover
+
 
     def show(num):
         nonlocal Imgbtn1
@@ -191,7 +216,7 @@ def start(t, name):
         nonlocal Imgbtn15
         nonlocal Imgbtn16
 
-        btns[num - 1].config(image=qmark) 
+        btns[num - 1].config(image=qmark)
         btns[num - 1].image = qmark
         btns[k].config(image=qmark)
         btns[k].image = qmark
@@ -237,14 +262,14 @@ def start(t, name):
         nonlocal k
 
         if 0 < num < 17 and num != k + 1:
-            btns[num - 1].config(image=images[num]) 
+            btns[num - 1].config(image=images[num])
             btns[num - 1].image = images[num]
-            
+
             if images[num] == images[k + 1]:
                 points += 1
                 btns[num - 1].config(state=DISABLED)
                 btns[k].config(state=DISABLED)
-                
+
                 Imgbtn1.config(command=lambda: show(1))
                 Imgbtn2.config(command=lambda: show(2))
                 Imgbtn3.config(command=lambda: show(3))
@@ -276,20 +301,20 @@ def start(t, name):
                               )
                     conn.commit()
                     conn.close()
-                    completed = messagebox.showinfo("FELICITACIONES", f"HA GANADO EL JUEGO!\nNúmero de intentos: {points + loses}\nTiempo empleado: {totaltime} segundos")
+                    completed = messagebox.showinfo("FELICITACIONES",
+                                                    f"HA GANADO EL JUEGO!\nNúmero de intentos: {points + loses}\nTiempo empleado: {totaltime} segundos")
                     if completed == "ok":
                         root.destroy()
-            else: 
+            else:
                 loses += 1
                 root.after(1000, lambda: cover(k, num))
         else:
             pass
-            
 
     # Entry and Label below
-    below = Frame(root)
+    below = Frame(root,bg="#A598EB")
     below.grid(row=4, column=0)
-    Label(img_frame, text="Enter the image number (1-16):", width=5).grid(row=4, column=0, columnspan=2, sticky="ew")
+    Label(img_frame, text="Ingrese el numero de la imagen (1-16):", width=5).grid(row=4, column=0, columnspan=2, sticky="ew")
     bar = Entry(img_frame, width=5)
     bar.grid(row=4, column=2, columnspan=1, sticky="ew")
 
@@ -305,7 +330,7 @@ def start(t, name):
 
     def get_cover(k, num):
         nonlocal submit
-        btns[num - 1].config(image=qmark) 
+        btns[num - 1].config(image=qmark)
         btns[num - 1].image = qmark
         btns[k].config(image=qmark)
         btns[k].image = qmark
@@ -318,12 +343,12 @@ def start(t, name):
         nonlocal points
         nonlocal loses
         num = int(bar.get())
-        
+
         if 0 < num < 17 and num != k + 1:
-            btns[num - 1].config(image=images[num]) 
+            btns[num - 1].config(image=images[num])
             btns[num - 1].image = images[num]
 
-            if images[num] == images[k + 1]: 
+            if images[num] == images[k + 1]:
                 points += 1
                 btns[num - 1].config(state=DISABLED)
                 btns[k].config(state=DISABLED)
@@ -343,17 +368,27 @@ def start(t, name):
                               )
                     conn.commit()
                     conn.close()
-                    completed = messagebox.showinfo("FELICITACIONES", f"HA GANADO EL JUEGO!\nNúmero de intentos: {points+loses}\nTiempo empleado: {totaltime}")
+                    completed = messagebox.showinfo("FELICITACIONES",
+                                                    f"HA GANADO EL JUEGO!\nNúmero de intentos: {points + loses}\nTiempo empleado: {totaltime}")
                     if completed == "ok":
                         root.destroy()
 
             else:
                 loses += 1
                 root.after(1000, lambda: get_cover(k, num))
-        else: 
+        else:
             pass
 
-    submit = Button(img_frame, width=5, text="Show Image", command=get_uncover)
+    submit = Button(img_frame, width=5, text="Mostrar imagen", command=get_uncover)
     submit.grid(row=4, column=3, columnspan=1, sticky="ew")
     conn.commit()
     conn.close()
+
+    def on_key_event(event):
+        if keyboard.is_pressed('ctrl+f'):
+            toggle_fullscreen()
+
+    root.bind('<Key>', on_key_event)
+
+    root.mainloop()
+
