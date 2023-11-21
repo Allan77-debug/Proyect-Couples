@@ -145,7 +145,7 @@ btn_jugar.bind("<Enter>", on_enter)
 btn_jugar.bind("<Leave>", on_leave)
 
 # Botón para salir
-btn_salir = Button(win, text="Volver al menú", font=fontName, width=7, height=2, command=salir, bg="#FFFFFF", bd=0, highlightthickness=0)
+btn_salir = Button(win, text="Salir", font=fontName, width=7, height=2, command=salir, bg="#FFFFFF", bd=0, highlightthickness=0)
 btn_salir.grid(row=6, column=0, columnspan=4, padx=15)
 btn_salir.bind("<Enter>", on_enter)
 btn_salir.bind("<Leave>", on_leave)
