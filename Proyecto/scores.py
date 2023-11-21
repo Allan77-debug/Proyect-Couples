@@ -28,7 +28,7 @@ def scores():
     title.grid(column=0, row=0, columnspan=9, sticky="ew")
 
     # Close window
-    btn_salir = Button(scores_win, text="Salir", command=close, bg="#FFFFFF", highlightthickness=0, bd=0, width=15, height=2)
+    btn_salir = Button(scores_win, text="Volver al menú", command=close, bg="#FFFFFF", highlightthickness=0, bd=0, width=15, height=2)
     btn_salir.grid(column=0, row=4, columnspan=9)
 
     # Font
