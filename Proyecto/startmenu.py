@@ -1,3 +1,4 @@
+
 from tkinter import *
 from tkinter import messagebox
 from PIL import Image, ImageTk
@@ -149,5 +150,5 @@ btn_salir = Button(win, text="Salir", font=fontName, width=7, height=2, command=
 btn_salir.grid(row=6, column=0, columnspan=4, padx=15)
 btn_salir.bind("<Enter>", on_enter)
 btn_salir.bind("<Leave>", on_leave)
-
+    
 win.mainloop()
