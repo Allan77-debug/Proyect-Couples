@@ -7,7 +7,7 @@ import tkinter.font as tkFont
 def scores():
     scores_win = Toplevel()
     scores_win.title("Puntuuaciones")
-    scores_win.geometry("480x580")
+    scores_win.geometry("497x580")
     scores_win.resizable(width=True, height=True)
     scores_win.config(bg="#DC8787")
     scores_win.attributes("-fullscreen", False)
@@ -28,7 +28,7 @@ def scores():
     title.grid(column=0, row=0, columnspan=9, sticky="ew")
 
     # Close window
-    btn_salir = Button(scores_win, text="Volver al menú", command=close, bg="#FFFFFF", highlightthickness=0, bd=0, width=15, height=2)
+    btn_salir = Button(scores_win, text="Volver al menu", command=close, bg="#FFFFFF", highlightthickness=0, bd=0, width=15, height=2)
     btn_salir.grid(column=0, row=4, columnspan=9)
 
     # Font
