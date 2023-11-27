@@ -5,6 +5,7 @@ import random
 import time
 import sqlite3
 import keyboard
+import reproductor
 
 fullscreen = False
 def start(t, name):
@@ -436,6 +437,7 @@ def start(t, name):
                     conn.close()
                     completed = messagebox.showinfo("FELICITACIONES", f"HA GANADO EL JUEGO!\nNúmero de intentos: {points + loses}\nTiempo empleado: {totaltime} segundos")
                     if completed == "ok":
+                        reproductor.finalizar()
                         root.destroy()
 
             else:
@@ -503,6 +505,7 @@ def start(t, name):
                     conn.close()
                     completed = messagebox.showinfo("FELICITACIONES", f"HA GANADO EL JUEGO!\nNúmero de intentos: {points + loses}\nTiempo empleado: {totaltime} segundos")
                     if completed == "ok":
+                        reproductor.finalizar()
                         root.quit()
 
             else:
@@ -520,4 +523,8 @@ def start(t, name):
             toggle_fullscreen()
 
     root.bind('<Key>', on_key_event)
+
+    # Música
+    reproductor.reproducir(root, 3)
+
     root.mainloop()
