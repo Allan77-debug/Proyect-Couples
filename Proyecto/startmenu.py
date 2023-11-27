@@ -1,4 +1,3 @@
-
 from tkinter import *
 from tkinter import messagebox
 from PIL import Image, ImageTk
@@ -8,6 +7,7 @@ import level1
 import level2
 import level3
 import scores
+import reproductor
 
 fullscreen = False
 
@@ -67,11 +67,11 @@ win.resizable(width=True, height=True)
 # Configurar el color de fondo de la ventana en formato hexadecimal
 win.configure(bg="#f0ebdf")  # Por ejemplo, #FFFFFF es blanco
 
-# Connect to the database
+# Conectarse a la base de datos
 conn = sqlite3.connect("database.db")
 c = conn.cursor()
 
-# Load and display the background image on the canvas
+# Cargar y desplegar la imágen de fondo en el canvas
 background_image = Image.open("Images/fondos/fondo_menu.png")
 background_image = ImageTk.PhotoImage(background_image)
 
@@ -95,11 +95,11 @@ info_label.place(relx=0.5, rely=0.26, anchor="center")
 # Inicializar la variable que indica si está en pantalla completa o no
 fullscreen = False
 
-# Main Title
+# Título principal
 fontTitle = tkFont.Font(size=40, family="Rockwell")
 Label(win, text="JUEGO DE PAREJAS", padx=0, pady=30, font=fontTitle, bg="#f0ebdf", bd=0, highlightthickness=0).grid(row=0, column=0, columnspan=4)
 
-# Player name
+# Nombre del Jugador
 fontName = tkFont.Font(size=15, family="Rockwell")
 lbl_name = Label(win, text="Nombre:", font=fontName, bg="#f0ebdf", bd=0, highlightthickness=0)
 lbl_name.grid(row=1, column=0, padx=15, pady=10)
@@ -113,7 +113,7 @@ btn_ingresar.grid(row=1, column=3, columnspan=1, padx=6, sticky="ew")
 btn_ingresar.bind("<Enter>", on_enter)
 btn_ingresar.bind("<Leave>", on_leave)
 
-# Levels
+# Niveles
 Label(win, text="Selecciona un nivel:", font=fontName, bg="#f0ebdf", bd=0, highlightthickness=0).grid(row=2, column=0, columnspan=2, sticky="ew", pady=10)
 
 levels = [("Nivel 1", "1"), ("Nivel 2", "2"), ("Nivel 3", "3"), ]
@@ -123,7 +123,7 @@ lvl.set("None")
 for n, (text, level) in enumerate(levels, start=3):
     Radiobutton(win, variable=lvl, text=text, value=level, font=fontName, bg="#f0ebdf", bd=0, highlightthickness=0).grid(row=n, column=0, columnspan=2, sticky="ew")
 
-# Img Types
+# Tipos de imágenes
 Label(win, text="Selecciona un tipo de imagen:", font=fontName, bg="#f0ebdf", bd=0, highlightthickness=0).grid(row=2, column=2, columnspan=2, sticky="ew", pady=10)
 
 types = [("Paisajes", "1"), ("Superheroes", "2"), ("Animales", "3")]
@@ -133,17 +133,20 @@ type.set("None")
 for m, (text, k) in enumerate(types, start=3):
     Radiobutton(win, variable=type, text=text, value=k, font=fontName, bg="#f0ebdf", bd=0, highlightthickness=0).grid(row=m, column=2, columnspan=2, sticky="ew")
 
-# Scores
+# Puntuaciones
 btn_puntuaciones = Button(win, text="Ver puntuaciones", font=fontName, width=25, height=3, command=show_scores, bg="#FFFFFF", bd=0, highlightthickness=0)
 btn_puntuaciones.grid(row=6, column=2, columnspan=2, padx=15)
 btn_puntuaciones.bind("<Enter>", on_enter)
 btn_puntuaciones.bind("<Leave>", on_leave)
 
-# Play Button
+# Botón Jugar
 btn_jugar = Button(win, text="Jugar", font=fontName, width=25, height=3, command=play, bg="#FFFFFF", bd=0, highlightthickness=0)
 btn_jugar.grid(row=6, column=0, columnspan=2, padx=15)
 btn_jugar.bind("<Enter>", on_enter)
 btn_jugar.bind("<Leave>", on_leave)
+
+# Música
+reproductor.reproducir(win, 0)
 
 # Botón para salir
 btn_salir = Button(win, text="Salir", font=fontName, width=7, height=2, command=salir, bg="#FFFFFF", bd=0, highlightthickness=0)
